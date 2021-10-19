@@ -7,7 +7,7 @@ export class Game extends React.Component {
     this.state = {
       history: [
         {
-          squares: Array(9).fill(null),
+          squares: Array(25).fill(null),
         },
       ],
       stepNumber: 0,
@@ -142,14 +142,12 @@ function calculateWinner(squares) {
       };
     }
   }
-  for (let i = 0; i < squares.length; i++) {
-    if (squares[i] === null) {
-      return {
-        winner: null,
-        line: null,
-        isDraw: false,
-      };
-    }
+  if (squares.includes(null)) {
+    return {
+      winner: null,
+      line: null,
+      isDraw: false,
+    };
   }
   return {
     winner: null,

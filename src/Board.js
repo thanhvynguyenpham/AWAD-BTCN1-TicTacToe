@@ -5,6 +5,7 @@ export class Board extends React.Component {
   renderSquare(i) {
     return (
       <Square
+        key={i}
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
         winCell={this.props.winLine && this.props.winLine.includes(i)}
